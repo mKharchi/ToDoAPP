@@ -1,5 +1,6 @@
 import React, { use, useContext } from 'react'
 import TodoContext from '../tools';
+import { MdDelete } from "react-icons/md";
 
 const DeleteTodo = ({id}) => {
   const {deleteTodo} = useContext(TodoContext)
@@ -9,7 +10,9 @@ const DeleteTodo = ({id}) => {
   }
 
   return (
-    <button onClick={handleDelete} className='bg-red-600 mx-2 text-white p-2 rounded-md'>DeleteTodo</button>
+    <button onClick={handleDelete} className='bg-transparent mx-2 text-white p-2 rounded-md'>
+      <MdDelete />
+    </button>
 
   )
 }

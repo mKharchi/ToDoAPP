@@ -3,7 +3,7 @@ import Todo from './Todo'
 
 const ListTodos = ({ todos }) => {
   return (
-    <div className='w-full flex flex-col items-center'>
+    <div className='w-full z-50 flex flex-col items-center'>
       {todos.map(todo => (
         <Todo key={todo.id} todo={todo} />
       ))}

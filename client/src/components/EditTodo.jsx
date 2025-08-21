@@ -1,5 +1,7 @@
 import React, { use, useContext, useState } from 'react'
 import TodoContext from '../tools'
+import { CiEdit } from "react-icons/ci";
+
 const EditingComponent = ({ todo  , handleSubmit , newDescription , setNewDescription }) => {
     
 
@@ -34,7 +36,9 @@ const EditTodo = ({ todo }) => {
             {isUpdating ? (
                 <EditingComponent handleSubmit={handleSubmit} todo={todo} setNewDescription={setNewDescription} newDescription={newDescription} />
             ) : (
-                <button onClick={() => setIsUpdating(true)} className='bg-yellow-500 text-white p-2 rounded-md'>EditTodo</button>
+                <button onClick={() => setIsUpdating(true)} className='bg-transparent text-white p-2 rounded-md'>
+                    <CiEdit />
+                </button>
             )}
         </>
     )

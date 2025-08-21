@@ -89,7 +89,17 @@ app.delete("/todos/:id", async (req, res) => {
   }
 })
 
+app.put("/todos/:id/complete", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedTodo = await pool.query("UPDATE todo SET checked = TRUE WHERE todo_id = $1 RETURNING *", [id]);
+    res.json(updatedTodo.rows[0]);
 
+  } catch (error) {
+    console.error(error.message);
+
+  }
+})
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');

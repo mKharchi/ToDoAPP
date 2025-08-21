@@ -33,6 +33,17 @@ export const TodoProvider = ({ children }) => {
             alert('Error deleting todo');
         }
     };
+
+    const checkTodo =  async (id) => {
+        try {
+            await fetch(`http://localhost:5000/todos/${id}/complete`, {
+                method: 'PUT',
+            });
+            fetchTodos();
+        } catch (error) {
+            alert('Error checking todo');
+        }
+    }
     const updateTodo = async (id, newDescription) => {
         try {
             await fetch(`http://localhost:5000/todos/${id}`, {
@@ -66,7 +77,7 @@ export const TodoProvider = ({ children }) => {
             todos,
             loading,
             fetchTodos,
-            updateTodo, deleteTodo , createTodo
+            updateTodo, deleteTodo , createTodo , checkTodo
         }}>
             {children}
         </TodoContext.Provider>

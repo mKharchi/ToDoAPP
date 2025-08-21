@@ -20,17 +20,17 @@ const InputTodo = () => {
   }
 
   return (
-    <div className='w-full flex flex-col gap-8 items-center'>
-      <h1 className='w-full text-center text-2xl mt-24 '>Todo List</h1>
-      <form onSubmit={handleSubmit} className='w-full flex justify-center'>
+    <div className='w-full z-40 flex px-4 flex-col gap-8 items-center'>
+      <h1 className='w-full text-center text-lg sm:text-2xl mt-24 '>Todo List</h1>
+      <form onSubmit={handleSubmit} className='w-full flex lg:flex-row flex-col items-center gap-4 lg:gap-0 justify-center'>
         <input
           type='text'
           name='todo'
           value={todo}
           onChange={handleChange}
-          className='border border-gray-400 focus:outline-none  p-4 rounded-l-lg min-w-2xl'
+          className='border border-gray-400 focus:outline-none  p-4 rounded-md lg:rounded-l-lg w-full lg:max-w-2xl '
         />
-        <button type='submit' className='bg-blue-700 border border-gray-400 text-white p-3 rounded-r-lg'>
+        <button disabled={!todo} type='submit' className='bg-pink-950 border max-w-24 text-xl  border-gray-400 text-white p-3 lg:rounded-r-lg'>
           Add Todo
         </button>
       </form>
