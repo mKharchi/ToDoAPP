@@ -30,7 +30,7 @@ const InputTodo = () => {
           onChange={handleChange}
           className='border border-gray-400 focus:outline-none  p-4 rounded-md lg:rounded-l-lg w-full lg:max-w-2xl '
         />
-        <button disabled={!todo} type='submit' className='bg-pink-950 border max-w-24 text-xl  border-gray-400 text-white p-3 lg:rounded-r-lg'>
+        <button disabled={!todo} type='submit' className='bg-pink-950 border  text-xl  border-gray-400 text-white p-3 lg:rounded-r-lg'>
           Add Todo
         </button>
       </form>
